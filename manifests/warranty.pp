@@ -5,7 +5,7 @@
 # Used by the fact in this module
 #
 class dell::warranty (
-  String $api_key,
+  Optional[String] $api_key,
   String $file_mode = '0644',
 ) {
   file { '/etc/dell_api_key':
