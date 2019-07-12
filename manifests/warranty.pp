@@ -5,12 +5,13 @@
 # Used by the fact in this module
 #
 class dell::warranty (
-  $api_key,
+  String $api_key,
+  String $file_mode = '0644',
 ) {
   file { '/etc/dell_api_key':
     content => $api_key,
     owner   => 'root',
     group   => 'root',
-    mode    => '0644',
+    mode    => $file_mode,
   }
 }
